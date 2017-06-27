@@ -1,0 +1,63 @@
+body {
+    background-color: cornsilk;
+}
+.href {
+    color: darkred;
+    text-decoration: none;
+    background: antiquewhite;
+    font-size: large;
+    font-kerning: auto;
+}
+.menu {
+    width: auto;
+    height: 25px;
+    margin-right: 200px;
+    float: right;
+}
+.block0 {
+    width: 100px;
+    height: 25px;
+    margin-left: 200px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+.child {
+    height: 100px;
+    width: 250px;
+    position: relative;
+    float: left;
+    text-align: justify;
+    background: transparent;
+    background-image: url("http://cdn.newsapi.com.au/image/v1/a959d7242a67b2682136cec3cad538dd");
+    background-size: contain;
+}
+.blocks {
+    height: 80px;
+    width: 100px;
+    margin: 24px;
+    display: inline-block;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4e/Macaca_nigra_self-portrait_large.jpg");
+    background-size: cover;
+}
+.block1 {
+    width: 870px;
+    height: 350px;
+    background-color: greenyellow;
+    margin: 5px auto 20px;
+    position: static;
+
+}
+.left {
+    width: 170px;
+    height: 50px;
+    background-color: salmon;
+    margin: 5px;
+    float: left;
+}
+.right {
+    width: 170px;
+    height: 50px;
+    background-color: salmon;
+    margin: 5px;
+    float: right;
+}
