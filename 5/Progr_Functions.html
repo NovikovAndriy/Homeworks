@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script = text/javascript>
+    var isArf = confirm('Арифметическая прогрессия');
+    if (!isArf) var isGeo = confirm('Геометрическая прогресcия')
+        if (!isArf && !isGeo) { 
+            alert ("Good Bye");
+        }
+    
+    var a = prompt('Укажите начальное число');
+    var d = prompt('Укажите разность прогресии');
+    var n = prompt('Укажите количество чисел');
+    var result = isArf ? getSumArf(a, d, n) :
+        isGeo ? getSumGeo(a, d, n) : 0;
+    alert('Сумма чисел = ' + result);
+    function getSumArf(a, d, n) {
+        var temp = +a;
+        var result = 0;
+        for (var ii = 0; ii < n; ii++) {
+            result += temp;
+            temp += +d;
+        }
+        return result;
+    }
+    function getSumGeo(a, d, n) {
+        var temp = +a;
+        var result = 0;
+        for (var i = 0; i < n; i++) {
+            result += temp;
+            temp *= +d;
+        }
+        return result;
+    }
+</script>
+</body>
+</html>
