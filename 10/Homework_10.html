@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form10">
+    <br>
+    <lable for="name">name</lable>
+    <input type="text" name="name" id="name"><input type="checkbox" name="nameV" id="nameV">
+    <lable>Validate?</lable>
+    <br>
+    <lable for="login">login</lable>
+    <input type="text" name="login" id="login"><input type="checkbox" name="loginV" id="loginV">
+    <lable>Validate?</lable>
+    <br>
+    <lable for="password">password</lable>
+    <input type="password" name="password" id="password"><input type="checkbox" name="passwordV" id="passwordV">
+    <lable>Validate?</lable>
+    <br>
+    <lable for="email">email</lable>
+    <input type="email" name="email" id="email"><input type="checkbox" name="emailV" id="emailV">
+    <lable>Validate?</lable>
+    <br>
+    <button type="button" id="btn">Submit</button>
+</form>
+<div id="result"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var formSubmitButton = document.getElementById('btn');
+        formSubmitButton.addEventListener('click', function () {
+            var FormObj = createFormObject();
+            console.log(FormObj);
+            console.log(new UniversalObject(FormObj));
+        });
+    });
+    function UniversalObject(data) {
+        var validate = "Validate";
+        if (data) {
+            for (var key in data.prop) {
+                if (data.methods[key + validate] === true) {
+                    console.log(key);
+                    this[key] = {
+                        prop: data.prop[key],
+                        validate: key + ' need some validation'
+                    }
+                } else
+                    this[key] = data.prop[key];
+            }
+        }
+    }
+    function createFormObject() {
+        return {
+            prop: {
+                name: document.getElementById('name').value,
+                login: document.getElementById('login').value,
+                password: document.getElementById('password').value,
+                email: document.getElementById('email').value,
+            },
+            methods: {
+                nameValidate: document.getElementById('nameV').checked,
+                loginValidate: document.getElementById('loginV').checked,
+                passwordValidate: document.getElementById('passwordV').checked,
+                emailValidate: document.getElementById('emailV').checked
+            }
+        };
+    }
+</script>
+</body>
+</html>
